@@ -1,0 +1,18 @@
+{
+  "name": "gym-classes",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Gym class booking with waitlist auto-promotion (Express + React + MySQL)",
+  "scripts": {
+    "setup": "npm install && npm --prefix server install && npm --prefix client install",
+    "db:up": "docker compose up -d --wait db",
+    "db:reset": "npm --prefix server run db:reset",
+    "dev": "concurrently -n api,web -c blue,green \"npm --prefix server run dev\" \"npm --prefix client run dev\"",
+    "build": "npm --prefix client run build",
+    "start": "npm --prefix server start",
+    "test": "npm --prefix server test"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
